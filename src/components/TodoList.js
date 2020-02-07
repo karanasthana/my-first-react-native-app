@@ -14,7 +14,7 @@ export default class TodoList extends React.Component {
 
     constructor(props) {
         super(props);
-        var navigation = this.props.navigation;
+        // var navigation = this.props.navigation;
     }
 
     navigateToScreenTwo(todo) {
