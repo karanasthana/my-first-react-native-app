@@ -1,6 +1,7 @@
 /* eslint-disable no-debugger */
 import React from 'react';
 import { View, Text, ActivityIndicator, Button } from 'react-native';
+import { Heading } from '@shoutem/ui';
 
 class TodoDetails extends React.Component {
     constructor(props) {
@@ -40,13 +41,18 @@ class TodoDetails extends React.Component {
         let UI;
 
         if (this.state.response === '') {
-                UI = <View><Button title="Fetch Account" onPress={() => this.fetchAccount()}></Button></View>;
+                UI = 
+                <View>
+                    <Heading>Karan</Heading>
+                    <View><Button title="Fetch Account" onPress={() => this.fetchAccount()}></Button></View>
+                </View>
         } else {
             UI = <View><Button title="Fetch Account" onPress={() => this.fetchAccount()}></Button></View>;
             let response = JSON.parse(this.state.response);
             let currentAccount = response.current_account;
             let currentAccountUser = response.current_account_user;
-            UI = <View>
+            UI = 
+            <View>
                 <Text>
                     AccountName: {currentAccount.name}
                 </Text>
@@ -61,5 +67,6 @@ class TodoDetails extends React.Component {
         return (UI);
     }
 }
+
 
 export default TodoDetails;
